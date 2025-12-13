@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  /* Color System - Dark theme with neon accents */
+  --color-background: #0a0a0f;
+  --color-surface: #111118;
+  --color-surface-elevated: #1a1a24;
+  
+  --color-primary: #00d9ff;
+  --color-primary-hover: #00b8db;
+  --color-secondary: #7c3aed;
+  --color-accent: #a855f7;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a0a0b8;
+  --color-text-muted: #6b6b80;
+  
+  --color-border: #2a2a3a;
+  --color-border-hover: #3a3a4a;
+
+  /* Typography */
+  --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  
+  /* Spacing */
+  --spacing-section: 8rem;
+  
+  /* Animations */
+  --transition-base: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-text-primary;
+    font-family: var(--font-family-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl tracking-tight;
+    font-weight: 700;
+  }
+
+  h2 {
+    @apply text-3xl md:text-5xl tracking-tight;
+    font-weight: 700;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl tracking-tight;
+    font-weight: 600;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl;
+    font-weight: 600;
+  }
+
+  p {
+    @apply text-base md:text-lg text-text-secondary leading-relaxed;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-border-hover);
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glow effect utility */
+.glow-primary {
+  box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+.glow-secondary {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.3);
+}
